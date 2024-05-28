@@ -3,7 +3,11 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 
 //Configure .env files
-dotenv.config({ path: "./.env" });
+console.log();
+if (process.env.BUILD != 6000) {
+  console.log("Hola");
+  dotenv.config({ path: "./.env" });
+}
 
 //Configure Uncaught Exceptions handlers
 process.on("uncaughtException", (err) => {
